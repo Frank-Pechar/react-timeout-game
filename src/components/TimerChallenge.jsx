@@ -2,16 +2,15 @@ import { useState, useRef } from 'react';
 
 import ResultModal from './ResultModal.jsx';
 
-// let timer;
-
 export default function TimerChallenge({ title, targetTime }) {
-  const timer = useRef();
-  const dialog = useRef();
+  const timer = useRef(); // use as instance variable that does not get reset on re-execution of component
+  const dialog = useRef(); // ref that is passed to ResultModal to point to dialog component
 
   const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
 
   const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
 
+  // Game Lost Time Out
   if (timeRemaining <= 0) {
     clearInterval(timer.current);
     dialog.current.open();
@@ -21,12 +20,14 @@ export default function TimerChallenge({ title, targetTime }) {
     setTimeRemaining(targetTime * 1000);
   }
 
+  // Reduce the time remaining by 10 milliseconds
   function handleStart() {
     timer.current = setInterval(() => {
       setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 10);
     }, 10);
   }
 
+  // Timer stopped before time out
   function handleStop() {
     dialog.current.open();
     clearInterval(timer.current);
@@ -34,6 +35,7 @@ export default function TimerChallenge({ title, targetTime }) {
 
   return (
     <>
+      {/* Forward ref in order to point to dialog element */}
       <ResultModal
         ref={dialog}
         targetTime={targetTime}
