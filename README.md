@@ -1,4 +1,4 @@
-# Expenses Log App
+# Timeout Game
 ## React Project
 
 ## Description of App Functionality, Features, and Methods
@@ -9,32 +9,31 @@ App can be run from: https://frank-pechar-react-expense-tracker.netlify.app/
 
 ## App Description
 
-This App Provides for Adding and Tracking Monthly Expenses by Year
+This App is a Timeout Guessing Game
 
 ## App Functionality
 
-List Monthly Expenses for a Given Year
+Add Player Name
+  - Enter Name in Set Name Input Field
+  - Click &lt;Set Name&gt; Button
 
-  - Select year from: Filter by year drop-down menu
-
-Add New Expense to list
-
-  - Click &lt;Add New Expense&gt; Button
-  - Enter: Title, Amount, Date
-  - Click &lt;Add Expense&gt; Button
-  
+Play a Game
+  - Click &lt;Start Challenge&gt; Button next to game time
+  - Guess timer up by waiting a specific amount of time
+  - Click &lt;Stop Challenge&gt; Button
+  - A score will be displayed
+  - Click &lt;Close&gt; Button
 
 ## React Features and Methods Used
 
-- Passing props data by object or multiple values to components
-- Use of props.children
-- Basic event handling
-- Implemented useState hook for updating data
-- Managed multiple states with one object state or individual state fields
+- Usage of Refs as element pointers
+- Usage of Refs as persistent instance variables
+- Forwarding Refs to other components
+- Implemented useImperativeHandle to allow access to child (ResultModal) function within parent (TimerChallenge) to open modal
+- Use of Portal to render modal into DOM
+- Passing props data 
+- Implemented useState hook 
 - Use of state update function parameter within Set State Function to ensure most current state
-- Two way binding of input fields
-- Lifting State Up to parent component
-- Used Derived value based on related State fields
-- Use of list Keys for unique id
-- Styling wrapper component
+- Maintaining minimum state management
 - Dynamic styling
+- Basic event handling
