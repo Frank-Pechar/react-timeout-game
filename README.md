@@ -3,9 +3,9 @@
 
 ## Description of App Functionality, Features, and Methods
 
-React project I completed from Udemy: React - The Complete Guide 2023 (incl. React Router & Redux) by Maximilian Schwarzmuller. After coding this project I added layout refinements including responsive design mods. Also added comments for educational purposes.
+React project I completed from Udemy: React - The Complete Guide 2023 (incl. React Router & Redux) by Maximilian Schwarzmuller. I added comments for educational purposes.
 
-App can be run from: https://frank-pechar-react-expense-tracker.netlify.app/
+App can be run from: https://frank-pechar-react-timeout-game.netlify.app/
 
 ## App Description
 
